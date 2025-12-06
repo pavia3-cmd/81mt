@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Wilcon - Free Bootstrap 4 Template by Colorlib</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="../css/theme.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/jquery.timepicker.css">
+        <link rel="stylesheet" href="css/flaticon.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="py-1 top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm text-center text-md-left mb-md-0 mb-2 pr-md-4 d-flex topper align-items-center">
+                        <p class="mb-0 w-100"> <span class="fa fa-paper-plane"></span> <span class="text"><a href="mailto:info@81.mt">info@81.mt</a></span> </p>
+                    </div>
+                    <div class="col-sm justify-content-center d-flex mb-md-0 mb-2">
+                        <div class="social-media">
+                            <p class="mb-0 d-flex"> <a href="https://www.facebook.com/81res/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a> <a href="https://x.com/ePropertyupdate" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a> <a href="https://www.instagram.com/81realestateservices/" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a> <a href="https://www.linkedin.com/company/81res" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">LinkedIn</i></span></a> </p>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
+                        <p class="mb-0 register-link"> <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#inquireModal">Inquire Now</a> </p>
+                    </div>
+                    <div class="modal fade" id="inquireModal" tabindex="-1" role="dialog" aria-labelledby="inquireModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="inquireModalLabel">Inquire Now</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="inquireForm">
+                                        <div class="form-group">
+                                            <label for="nameInput">Your Name</label>
+                                            <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="emailInput">Your Email</label>
+                                            <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="messageInput">Message (optional)</label>
+                                            <textarea class="form-control" id="messageInput" placeholder="Your message" rows="3"></textarea>
+                                        </div>
+                                        <button type="button" class="btn btn-primary btn-block" onclick="sendWhatsApp()">Send via WhatsApp</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        function sendWhatsApp() {
+                            let name = document.getElementById('nameInput').value.trim();
+                            let email = document.getElementById('emailInput').value.trim();
+                            let message = document.getElementById('messageInput').value.trim();
+
+                            if(!name || !email) { alert("Please enter your name and email."); return; }
+
+                            let text = `Hello! My name is ${name}. I found you on your website www.81.mt. My email is ${email}. ${message ? "Message: " + message + ". " : ""}We shall respond within 24 hours.`;
+                            let encodedText = encodeURIComponent(text);
+                            let waNumber = "35679818181";
+
+                            window.open(`https://wa.me/${waNumber}?text=${encodedText}`, '_blank');
+                            $('#inquireModal').modal('hide');
+                            document.getElementById('inquireForm').reset();
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="pt-4 pb-5">
+            <div class="container">
+                <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
+                    <div class="col-md-4 d-flex mb-2 mb-md-0">
+                        <img src="images/81logo-icon.png"><a class="navbar-brand d-flex align-items-center" href="index.html"> <span class="ml-2"><small></small></span> </a>
+                    </div>
+                    <div class="col-md-4 d-flex topper mb-md-0 mb-2 align-items-center">
+                        <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-map"></span>
+                        </div>
+                        <div class="pr-md-4 pl-md-3 pl-3 text">
+                            <p class="con"><span>Call</span> <span>&nbsp;+356 7981 8181</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex topper mb-md-0 align-items-center">
+                        <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-paper-plane"></span>
+                        </div>
+                        <div class="text pl-3 pl-md-3">
+                            <p class="hr"><span>Our Location</span></p>
+                            <p class="con">Triq Anton Inglott, San Gwann SGN1141</p>
+                            <p class="con">MALTA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+            <div class="container d-flex align-items-center">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span> Menu
+                </button>
+                <div class="collapse navbar-collapse" id="ftco-nav">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="about.html" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="services.html" class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="project.html" class="nav-link">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="contact.html" class="nav-link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row no-gutters slider-text align-items-end justify-content-start">
+                    <div class="col-md-9 ftco-animate pb-5">
+                        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Projects <i class="fa fa-chevron-right"></i></span></p>
+                        <h1 class="mb-3 bread">Our Current Projects</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center mb-5 pb-3">
+                    <div class="col-md-7 text-center heading-section ftco-animate">
+                        <span class="subheading">Our Global Work Industries</span>
+                        <h2 class="mb-4">Latest Projects</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Project items remain the same -->
+                    <div class="col-md-4">
+                        <div class="project">
+                            <a href="images/project-1.jpg" class="img image-popup d-flex align-items-center" style="background-image: url(images/project-1.jpg);"> <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span>
+                                </div> </a>
+                            <div class="text">
+                                <span class="subheading">Building</span>
+                                <h3>Building 1</h3>
+                                <p><span class="fa fa-map-marker mr-1"></span> Under Construction</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="project">
+                            <a href="images/project-2.jpg" class="img image-popup d-flex align-items-center" style="background-image: url(images/project-2.jpg);"> <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span>
+                                </div> </a>
+                            <div class="text">
+                                <span class="subheading">Building</span>
+                                <h3>Building 2</h3>
+                                <p><span class="fa fa-map-marker mr-1"></span> Under Construction</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="project">
+                            <a href="images/project-3.jpg" class="img image-popup d-flex align-items-center" style="background-image: url(images/project-3.jpg);"> <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span>
+                                </div> </a>
+                            <div class="text">
+                                <span class="subheading">Building</span>
+                                <h3>Building 2</h3>
+                                <p><span class="fa fa-map-marker mr-1"></span> Under Construction</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="ftco-footer" style="padding:10px 0;">
+            <div class="container-fluid bg-primary">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 aside-stretch py-3">
+                            <p>© Copyright <script>document.write(new Date().getFullYear());</script> | 81 Energy Efficient Projects | All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Modals, loader, scripts remain the same -->
+        <div id="ftco-loader" class="show fullscreen">
+            <svg class="circular" width="48px" height="48px">
+                <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
+                <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
+            </svg>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery-migrate-3.0.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.stellar.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/jquery.animateNumber.min.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/jquery.timepicker.min.js"></script>
+        <script src="js/scrollax.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+        <script src="js/google-map.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
