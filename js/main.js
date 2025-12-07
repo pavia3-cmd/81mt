@@ -240,23 +240,23 @@ function handleNetlifySubmit(event, formModalId) {
     const formData = new FormData(form);
 
     // Use Netlify's endpoint to submit the form data
-    // The action attribute is removed, so 'fetch("/")' sends data back to the current page for Netlify processing
     fetch("/", {
         method: "POST",
         body: formData
     })
     .then(response => {
+        // Check for success status (200-299 range)
         if (response.ok) {
-            // 1. Submission was successful. Hide the form modal (e.g., #quoteModal).
+            // 1. Submission was successful. Hide the form modal.
             $('#' + formModalId).modal('hide'); 
             
-            // 2. Show the new success modal (#successModal).
+            // 2. Show the new success modal.
             $('#successModal').modal('show');
             
             // 3. Clear the form data for next use
             form.reset(); 
         } else {
-            // Failure: Display a generic error message
+            // Failure: Display the generic error message
             alert("Error: Submission failed. Please try again or call us.");
         }
     })
