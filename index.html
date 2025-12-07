@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <!-- Top Header -->
         <div class="py-1 top">
             <div class="container">
                 <div class="row">
@@ -25,74 +26,40 @@
                     </div>
                     <div class="col-sm justify-content-center d-flex mb-md-0 mb-2">
                         <div class="social-media">
-                            <p class="mb-0 d-flex"> <a href="https://www.facebook.com/81res/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a> <a href="https://x.com/ePropertyupdate" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a> <a href="https://www.instagram.com/81realestateservices/" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a> <a href="https://www.linkedin.com/company/81res" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">LinkedIn</i></span></a>  
+                            <p class="mb-0 d-flex"> <a href="https://www.facebook.com/81res/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a> <a href="https://x.com/ePropertyupdate" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a> <a href="https://www.instagram.com/81realestateservices/" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a> <a href="https://www.linkedin.com/company/81res" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">LinkedIn</i></span></a> </p>
                         </div>
                     </div>
-                    <!-- Inquire Now Button -->
-                    <!-- Modal -->
-                    <div class="modal fade" id="inquireModal" tabindex="-1" role="dialog" aria-labelledby="inquireModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="inquireModalLabel">Inquire Now</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form id="inquireForm">
-                                        <div class="form-group">
-                                            <label for="nameInput">Your Name</label>
-                                            <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="emailInput">Your Email</label>
-                                            <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="messageInput">Message (optional)</label>
-                                            <textarea class="form-control" id="messageInput" placeholder="Your message" rows="3"></textarea>
-                                        </div>
-                                        <button type="button" class="btn btn-primary btn-block" onclick="sendWhatsApp()">Send via WhatsApp</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- WhatsApp Script -->
-                    <script>
-function sendWhatsApp() {
-    // Collect form values
-    let name = document.getElementById('nameInput').value.trim();
-    let email = document.getElementById('emailInput').value.trim();
-    let message = document.getElementById('messageInput').value.trim();
-
-    if(!name || !email) {
-        alert("Please enter your name and email.");
-        return;
-    }
-
-    // Construct WhatsApp message
-    let text = `Hello! My name is ${name}. I found you on your website www.81.mt. ` +
-               `My email is ${email}. ${message ? "Message: " + message + ". " : ""}` +
-               `We shall respond within 24 hours.`;
-
-    let encodedText = encodeURIComponent(text);
-
-    // WhatsApp number with country code
-    let waNumber = "35679818181";
-
-    // Open WhatsApp (mobile & desktop)
-    window.open(`https://wa.me/${waNumber}?text=${encodedText}`, '_blank');
-
-    // Close the modal
-    $('#inquireModal').modal('hide');
-
-    // Reset form
-    document.getElementById('inquireForm').reset();
-}
-</script>
                     <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                        <p class="mb-0 register-link"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Inquire Now</a></p>
+                        <p class="mb-0 register-link"> <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#inquireModal">Inquire Now</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="inquireModal" tabindex="-1" role="dialog" aria-labelledby="inquireModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="inquireModalLabel">Inquire Now</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="inquireForm">
+                            <div class="form-group">
+                                <label for="nameInput">Your Name</label>
+                                <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailInput">Your Email</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="messageInput">Message (optional)</label>
+                                <textarea class="form-control" id="messageInput" placeholder="Your message" rows="3"></textarea>
+                            </div>
+                            <button type="button" class="btn btn-primary btn-block" onclick="sendWhatsApp()">Send via WhatsApp</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -101,10 +68,12 @@ function sendWhatsApp() {
             <div class="container">
                 <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
                     <div class="col-md-4 d-flex mb-2 mb-md-0">
-                        <img src="images/81logo-icon.png"><a class="navbar-brand d-flex align-items-center" href="index.html"> <span class="ml-2"><small></small></span> </a>
+                        <img src="images/81logo-icon.png">
+                        <a class='navbar-brand d-flex align-items-center' href='/'> <span class="ml-2"><small></small></span> </a>
                     </div>
                     <div class="col-md-4 d-flex topper mb-md-0 mb-2 align-items-center">
-                        <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-map"></span>
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span class="fa fa-map"></span>
                         </div>
                         <div class="pr-md-4 pl-md-3 pl-3 text">
                             <p class="con"><span>Call&nbsp;</span> <span> +356 7981 8181</span></p>
@@ -112,7 +81,8 @@ function sendWhatsApp() {
                         </div>
                     </div>
                     <div class="col-md-4 d-flex topper mb-md-0 align-items-center">
-                        <div class="icon d-flex justify-content-center align-items-center"><span class="fa fa-paper-plane"></span>
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span class="fa fa-paper-plane"></span>
                         </div>
                         <div class="text pl-3 pl-md-3">
                             <p class="hr"><span>Our Location</span></p>
@@ -123,30 +93,32 @@ function sendWhatsApp() {
                 </div>
             </div>
         </div>
-        <div data-empty-placeholder></div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container d-flex align-items-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="fa fa-bars"></span> Menu
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span> Menu
                 </button>
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a href="index.html" class="nav-link">Home</a>
+                        <li class="nav-item active">
+                            <a class='nav-link' href='/'>Home</a>
                         </li>
-                        <li class="nav-item"><a href="about.html" class="nav-link">About</a>
+                        <li class="nav-item">
+                            <a class='nav-link' href='/about'>About</a>
                         </li>
-                        <li class="nav-item"><a href="services.html" class="nav-link">Services</a>
+                        <li class="nav-item">
+                            <a class='nav-link' href='/services'>Services</a>
                         </li>
-                        <li class="nav-item"><a href="project.html" class="nav-link">Projects</a>
+                        <li class="nav-item">
+                            <a class='nav-link' href='/project'>Projects</a>
                         </li>
-                        <li class="nav-item"></li>
-                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
+                        <li class="nav-item">
+                            <a class='nav-link' href='/contact'>Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- END nav -->
+        <!-- HERO SECTION -->
         <section class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
@@ -156,18 +128,20 @@ function sendWhatsApp() {
                             <h1 class="mb-4">We Build <br>Great Projects</h1>
                             <p class="mb-4">For new construction, efficiency isn&apos;t just a buzzword&#8212;it&apos;s the key to long-term value. At 81 Energy Efficient Projects, we deliver comprehensive solutions that ensure your new building performs to the highest standards.
 Our expert project management and innovative design are centered on sustainability and the circular economy. We are leaders in providing top-tier thermal, acoustic, and fire insulation, which are essential for creating buildings that are both environmentally responsible and cost-effective to run. We offer a full turnkey delivery model, guiding you from concept to completion with a focus on seamless execution and exceptional results. Your satisfaction is our success, and a high-performance building is our shared goal.</p>
-                            <p> <a href="services.html" class="btn btn-primary">Our Services</a> <a href="#" class="btn btn-white" data-toggle="modal" data-target="#exampleModalCenter">Request A Quote</a></p>
+                            <!-- REMOVED middle buttons -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- SERVICES SECTION -->
         <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2">
             <div class="container">
                 <div class="row no-gutters d-flex">
                     <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                         <div class="media block-6 services d-flex">
-                            <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-engineer-1"></span>
+                            <div class="icon justify-content-center align-items-center d-flex">
+                                <span class="flaticon-engineer-1"></span>
                             </div>
                             <div class="media-body pl-4">
                                 <h3 class="heading mb-3">Quality Construction</h3>
@@ -177,7 +151,8 @@ Our expert project management and innovative design are centered on sustainabili
                     </div>
                     <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                         <div class="media block-6 services services-2 d-flex">
-                            <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-worker-1"></span>
+                            <div class="icon justify-content-center align-items-center d-flex">
+                                <span class="flaticon-worker-1"></span>
                             </div>
                             <div class="media-body pl-4">
                                 <h3 class="heading mb-3">Professional Liability</h3>
@@ -187,7 +162,8 @@ Our expert project management and innovative design are centered on sustainabili
                     </div>
                     <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                         <div class="media block-6 services d-flex">
-                            <div class="icon justify-content-center align-items-center d-flex"><span class="flaticon-engineer"></span>
+                            <div class="icon justify-content-center align-items-center d-flex">
+                                <span class="flaticon-engineer"></span>
                             </div>
                             <div class="media-body pl-4">
                                 <h3 class="heading mb-3">Dedicated To Our Clients</h3>
@@ -198,12 +174,14 @@ Our expert project management and innovative design are centered on sustainabili
                 </div>
             </div>
         </section>
+        <!-- ABOUT SECTION -->
         <section class="ftco-section" id="about-section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 d-flex align-items-stretch">
                         <div class="about-wrap img w-100" style="background-image: url(images/mercury-1.jpg);">
-                            <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-crane"></span>
+                            <div class="icon d-flex align-items-center justify-content-center">
+                                <span class="flaticon-crane"></span>
                             </div>
                         </div>
                     </div>
@@ -212,7 +190,8 @@ Our expert project management and innovative design are centered on sustainabili
                             <div class="col-md-12 heading-section ftco-animate"><span class="subheading">Welcome to 81 ENERGY EFFICIENT PROJECTS</span>
                                 <h2 class="mb-4">Project Management</h2>
                                 <div class="d-flex about">
-                                    <div class="icon"><span class="flaticon-hammer"></span>
+                                    <div class="icon">
+                                        <span class="flaticon-hammer"></span>
                                     </div>
                                     <h3>Delivering trusted real estate expertise since 1993, with professional service at the highest standard.</h3>
                                 </div>
@@ -226,6 +205,7 @@ Our expert project management and innovative design are centered on sustainabili
                 </div>
             </div>
         </section>
+        <!-- INTRO / BOTTOM BUTTON -->
         <section class="ftco-intro">
             <div class="container">
                 <div class="row justify-content-center">
@@ -234,14 +214,14 @@ Our expert project management and innovative design are centered on sustainabili
                             <div class="overlay"></div>
                             <h2>Providing Personalized and High Quality Services</h2>
                             <p>From concept to completion, we deliver tailored solutions with uncompromising quality.</p>
-                            <p class="mb-0"> <a href="https://wa.me/35679818181?text=Hello!%20I%20was%20on%20the%2081%20Energy%20Efficient%20Projects%20Website%20and%20would%20like%20a%20quotation." class="btn btn-primary px-4 py-3" target="_blank">
-                           Request A Quote </a> </p>
+                            <p class="mb-0"> <a href="#" class="btn btn-primary px-4 py-3" data-toggle="modal" data-target="#quoteModal">
+                                    Request A Quote </a> </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- UPDATED FOOTER -->
+        <!-- FOOTER -->
         <footer class="ftco-footer text-center py-4">
             <div class="container-fluid bg-primary">
                 <div class="container">
@@ -253,53 +233,54 @@ Our expert project management and innovative design are centered on sustainabili
                 </div>
             </div>
         </footer>
-        <form action="https://formsubmit.co/YOUR_EMAIL_HERE@gmail.com" method="POST" class="appointment-form ftco-animate">
-            <!-- Hidden config -->
-            <input type="hidden" name="_subject" value="New Quote Request from www.81.mt">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="Website" value="www.81.mt">
-            <h3>Request Quote</h3>
-            <div class="">
-                <div class="form-group">
-                    <input type="text" name="First Name" class="form-control" placeholder="First Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="Last Name" class="form-control" placeholder="Last Name" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="Phone" class="form-control" placeholder="Phone" required>
-                </div>
-            </div>
-            <div class="">
-                <div class="form-group">
-                    <div class="form-field">
-                        <div class="select-wrap">
-                            <div class="icon"><span class="fa fa-chevron-down"></span>
+        <!-- QUOTE MODAL -->
+        <div class="modal fade" id="quoteModal" tabindex="-1" role="dialog" aria-labelledby="quoteModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="quoteModalLabel">Request A Quote</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="https://formsubmit.co/info@81.mt" method="POST" id="quoteForm">
+                            <input type="hidden" name="_subject" value="New Quote Request from www.81.mt">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_template" value="table">
+                            <input type="hidden" name="Website" value="www.81.mt">
+                            <div class="form-group">
+                                <input type="text" name="First Name" class="form-control" placeholder="First Name" required>
                             </div>
-                            <select name="Service" class="form-control" required>
-                                <option value="">Select Your Services</option>
-                                <option value="Project Management">Project Management</option>
-                                <option value="Architecture">Architecture</option>
-                                <option value="Consultancy">Consultancy</option>
-                                <option value="Construction">Construction</option>
-                                <option value="Interior & Exterior Design">Interior & Exterior Design</option>
-                                <option value="Retrofitting">Retrofitting</option>
-                                <option value="Turnkey & Other Services">Turnkey and other Services</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <input type="text" name="Last Name" class="form-control" placeholder="Last Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="Phone" class="form-control" placeholder="Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="Service Requested" class="form-control" required>
+                                    <option value="">Select Your Services</option>
+                                    <option value="Project Management">Project Management</option>
+                                    <option value="Architecture">Architecture</option>
+                                    <option value="Consultancy">Consultancy</option>
+                                    <option value="Construction">Construction</option>
+                                    <option value="Interior & Exterior Design">Interior & Exterior Design</option>
+                                    <option value="Retrofitting">Retrofitting</option>
+                                    <option value="Turnkey & Other Services">Turnkey and other Services</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="Message" cols="30" rows="4" class="form-control" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Request A Quote" class="btn btn-primary btn-block">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="">
-                <div class="form-group">
-                    <textarea name="Message" cols="30" rows="4" class="form-control" placeholder="Message" required></textarea>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Request A Quote" class="btn btn-primary py-3 px-4">
-                </div>
-            </div>
-        </form>
+        </div>
+        <!-- SCRIPTS -->
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery-migrate-3.0.1.min.js"></script>
         <script src="js/popper.min.js"></script>
