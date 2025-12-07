@@ -233,3 +233,36 @@
 
 })(jQuery);
 
+function handleNetlifySubmit(event, formModalId) {
+    event.preventDefault(); // Stop the default HTML redirect
+
+    const form = document.getElementById(event.target.id);
+    const formData = new FormData(form);
+
+    // Use Netlify's endpoint to submit the form data
+    // The action attribute is removed, so 'fetch("/")' sends data back to the current page for Netlify processing
+    fetch("/", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            // 1. Submission was successful. Hide the form modal (e.g., #quoteModal).
+            $('#' + formModalId).modal('hide'); 
+            
+            // 2. Show the new success modal (#successModal).
+            $('#successModal').modal('show');
+            
+            // 3. Clear the form data for next use
+            form.reset(); 
+        } else {
+            // Failure: Display a generic error message
+            alert("Error: Submission failed. Please try again or call us.");
+        }
+    })
+    .catch(error => {
+        // Handle network errors
+        console.error('Submission Error:', error);
+        alert("Error: Network error occurred. Please try again.");
+    });
+}

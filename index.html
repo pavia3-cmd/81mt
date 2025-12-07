@@ -34,6 +34,23 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Submission Successful!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <h1 style="color: #007bff;"><span class="fa fa-check-circle"></span></h1>
+                        <p class="lead">Thank you! Your request has been successfully submitted.</p>
+                        <p>We will contact you shortly.</p>
+                        <button type="button" class="btn btn-primary mt-3" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="modal fade" id="inquireModal" tabindex="-1" role="dialog" aria-labelledby="inquireModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -43,7 +60,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form name="inquire" method="POST" data-netlify="true" action="/thank-you" id="inquireForm">
+                        <form name="inquire" method="POST" data-netlify="true" id="inquireForm" onsubmit="handleNetlifySubmit(event, 'inquireModal')">
                             <input type="hidden" name="form-name" value="inquire">
                             <div class="form-group">
                                 <label for="nameInput">Your Name</label>
@@ -234,7 +251,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form name="quote" method="POST" data-netlify="true" action="/thank-you" id="quoteForm">
+                        <form name="quote" method="POST" data-netlify="true" id="quoteForm" onsubmit="handleNetlifySubmit(event, 'quoteModal')">
                             <input type="hidden" name="form-name" value="quote">
                             <div class="form-group">
                                 <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
