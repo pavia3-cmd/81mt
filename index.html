@@ -43,10 +43,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="send_email.php" method="POST" id="inquireForm">
-                            <input type="hidden" name="redirect" value="thank-you.html"> 
-                            <input type="hidden" name="to_email" value="info@81.mt">
-                            <input type="hidden" name="subject" value="New Inquiry (Inquire Now Button) from www.81.mt">
+                        <form name="inquire" method="POST" data-netlify="true" action="thank-you.html" id="inquireForm">
+                            <input type="hidden" name="form-name" value="inquire">
                             <div class="form-group">
                                 <label for="nameInput">Your Name</label>
                                 <input type="text" class="form-control" name="name" id="nameInput" placeholder="Enter your name" required>
@@ -59,7 +57,7 @@
                                 <label for="messageInput">Message (optional)</label>
                                 <textarea class="form-control" name="message" id="messageInput" placeholder="Your message" rows="3"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary btn-block">Send Inquiry via Email</button>
+                            <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
                         </form>
                     </div>
                 </div>
@@ -236,10 +234,8 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="send_email.php" method="POST" id="quoteForm">
-                            <input type="hidden" name="redirect" value="thank-you.html"> 
-                            <input type="hidden" name="to_email" value="info@81.mt">
-                            <input type="hidden" name="subject" value="New Quote Request from www.81.mt">
+                        <form name="quote" method="POST" data-netlify="true" action="thank-you.html" id="quoteForm">
+                            <input type="hidden" name="form-name" value="quote">
                             <div class="form-group">
                                 <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
                             </div>
