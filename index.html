@@ -17,7 +17,6 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <!-- Top Header -->
         <div class="py-1 top">
             <div class="container">
                 <div class="row">
@@ -35,7 +34,6 @@
                 </div>
             </div>
         </div>
-        <!-- Modal -->
         <div class="modal fade" id="inquireModal" tabindex="-1" role="dialog" aria-labelledby="inquireModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -45,20 +43,23 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="inquireForm">
+                        <form action="send_email.php" method="POST" id="inquireForm">
+                            <input type="hidden" name="redirect" value="thank-you.html"> 
+                            <input type="hidden" name="to_email" value="info@81.mt">
+                            <input type="hidden" name="subject" value="New Inquiry (Inquire Now Button) from www.81.mt">
                             <div class="form-group">
                                 <label for="nameInput">Your Name</label>
-                                <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
+                                <input type="text" class="form-control" name="name" id="nameInput" placeholder="Enter your name" required>
                             </div>
                             <div class="form-group">
                                 <label for="emailInput">Your Email</label>
-                                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
+                                <input type="email" class="form-control" name="email" id="emailInput" placeholder="Enter your email" required>
                             </div>
                             <div class="form-group">
                                 <label for="messageInput">Message (optional)</label>
-                                <textarea class="form-control" id="messageInput" placeholder="Your message" rows="3"></textarea>
+                                <textarea class="form-control" name="message" id="messageInput" placeholder="Your message" rows="3"></textarea>
                             </div>
-                            <button type="button" class="btn btn-primary btn-block" onclick="sendWhatsApp()">Send via WhatsApp</button>
+                            <button type="submit" class="btn btn-primary btn-block">Send Inquiry via Email</button>
                         </form>
                     </div>
                 </div>
@@ -118,7 +119,6 @@
                 </div>
             </div>
         </nav>
-        <!-- HERO SECTION -->
         <section class="hero-wrap js-fullheight" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
@@ -126,15 +126,12 @@
                     <div class="col-lg-6 ftco-animate">
                         <div class="mt-5">
                             <h1 class="mb-4">We Build <br>Great Projects</h1>
-                            <p class="mb-4">For new construction, efficiency isn&apos;t just a buzzword&#8212;it&apos;s the key to long-term value. At 81 Energy Efficient Projects, we deliver comprehensive solutions that ensure your new building performs to the highest standards.
-Our expert project management and innovative design are centered on sustainability and the circular economy. We are leaders in providing top-tier thermal, acoustic, and fire insulation, which are essential for creating buildings that are both environmentally responsible and cost-effective to run. We offer a full turnkey delivery model, guiding you from concept to completion with a focus on seamless execution and exceptional results. Your satisfaction is our success, and a high-performance building is our shared goal.</p>
-                            <!-- REMOVED middle buttons -->
+                            <p class="mb-4">For new construction, efficiency isn&apos;t just a buzzword&#8212;it&apos;s the key to long-term value. At 81 Energy Efficient Projects, we deliver comprehensive solutions that ensure your new building performs to the highest standards. Our expert project management and innovative design are centered on sustainability and the circular economy. We are leaders in providing top-tier thermal, acoustic, and fire insulation, which are essential for creating buildings that are both environmentally responsible and cost-effective to run. We offer a full turnkey delivery model, guiding you from concept to completion with a focus on seamless execution and exceptional results. Your satisfaction is our success, and a high-performance building is our shared goal.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- SERVICES SECTION -->
         <section class="ftco-section ftco-no-pt ftco-no-pb ftco-services-2">
             <div class="container">
                 <div class="row no-gutters d-flex">
@@ -174,7 +171,6 @@ Our expert project management and innovative design are centered on sustainabili
                 </div>
             </div>
         </section>
-        <!-- ABOUT SECTION -->
         <section class="ftco-section" id="about-section">
             <div class="container">
                 <div class="row">
@@ -205,7 +201,6 @@ Our expert project management and innovative design are centered on sustainabili
                 </div>
             </div>
         </section>
-        <!-- INTRO / BOTTOM BUTTON -->
         <section class="ftco-intro">
             <div class="container">
                 <div class="row justify-content-center">
@@ -215,13 +210,12 @@ Our expert project management and innovative design are centered on sustainabili
                             <h2>Providing Personalized and High Quality Services</h2>
                             <p>From concept to completion, we deliver tailored solutions with uncompromising quality.</p>
                             <p class="mb-0"> <a href="#" class="btn btn-primary px-4 py-3" data-toggle="modal" data-target="#quoteModal">
-                                    Request A Quote </a> </p>
+                                        Request A Quote </a> </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- FOOTER -->
         <footer class="ftco-footer text-center py-4">
             <div class="container-fluid bg-primary">
                 <div class="container">
@@ -233,7 +227,6 @@ Our expert project management and innovative design are centered on sustainabili
                 </div>
             </div>
         </footer>
-        <!-- QUOTE MODAL -->
         <div class="modal fade" id="quoteModal" tabindex="-1" role="dialog" aria-labelledby="quoteModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -243,22 +236,24 @@ Our expert project management and innovative design are centered on sustainabili
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="https://formsubmit.co/info@81.mt" method="POST" id="quoteForm">
-                            <input type="hidden" name="_subject" value="New Quote Request from www.81.mt">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="Website" value="www.81.mt">
+                        <form action="send_email.php" method="POST" id="quoteForm">
+                            <input type="hidden" name="redirect" value="thank-you.html"> 
+                            <input type="hidden" name="to_email" value="info@81.mt">
+                            <input type="hidden" name="subject" value="New Quote Request from www.81.mt">
                             <div class="form-group">
-                                <input type="text" name="First Name" class="form-control" placeholder="First Name" required>
+                                <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="Last Name" class="form-control" placeholder="Last Name" required>
+                                <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="Phone" class="form-control" placeholder="Phone" required>
+                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
                             </div>
                             <div class="form-group">
-                                <select name="Service Requested" class="form-control" required>
+                                <input type="text" name="phone" class="form-control" placeholder="Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="service" class="form-control" required>
                                     <option value="">Select Your Services</option>
                                     <option value="Project Management">Project Management</option>
                                     <option value="Architecture">Architecture</option>
@@ -270,7 +265,7 @@ Our expert project management and innovative design are centered on sustainabili
                                 </select>
                             </div>
                             <div class="form-group">
-                                <textarea name="Message" cols="30" rows="4" class="form-control" placeholder="Message" required></textarea>
+                                <textarea name="message" cols="30" rows="4" class="form-control" placeholder="Message" required></textarea>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Request A Quote" class="btn btn-primary btn-block">
@@ -280,7 +275,6 @@ Our expert project management and innovative design are centered on sustainabili
                 </div>
             </div>
         </div>
-        <!-- SCRIPTS -->
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery-migrate-3.0.1.min.js"></script>
         <script src="js/popper.min.js"></script>
