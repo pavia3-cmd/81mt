@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Contact Us | 81 Energy Efficient Projects</title>
+        <title>Services | 81 Energy Efficient Projects</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="../css/theme.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/animate.css">
         <link rel="stylesheet" href="css/owl.carousel.min.css">
         <link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -14,20 +15,16 @@
         <link rel="stylesheet" href="css/bootstrap-datepicker.css">
         <link rel="stylesheet" href="css/jquery.timepicker.css">
         <link rel="stylesheet" href="css/flaticon.css">
-        <link rel="stylesheet" href="css/style.css">
         
         <style>
-            /* Fixes background image visibility: makes the entire image fit */
             .hero-wrap-2 {
+                /* Forces the entire image (crane/construction) to fit without cropping */
                 background-size: contain !important; 
                 background-position: center !important;
                 background-repeat: no-repeat !important; 
             }
-            .contact-form .form-control { border-radius: 6px; } 
-            .modal .form-control { border-radius: 6px; } 
-            iframe.map-embed { border-radius: 8px; border: 0; width: 100%; height: 400px; }
         </style>
-        
+
     </head>
     <body>
         <div class="py-1 top">
@@ -38,7 +35,7 @@
                     </div>
                     <div class="col-sm justify-content-center d-flex mb-md-0 mb-2">
                         <div class="social-media">
-                            <p class="mb-0 d-flex"> <a href="https://www.facebook.com/81res/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a> <a href="https://x.com/ePropertyupdate" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a> <a href="https://www.instagram.com/81realestateservices/" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a> <a href="https://www.linkedin.com/company/81res" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">LinkedIn</i></span></a> </p>
+                            <p class="mb-0 d-flex"> <a href="https://www.facebook.com/81res/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a> <a href="https://x.com/ePropertyupdate" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a> <a href="https://www.instagram.com/81realestateservices/" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"></span></a> <a href="https://www.linkedin.com/company/81res" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"></span></a> </p>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
@@ -67,185 +64,189 @@
             </div>
         </div>
 
-        <div class="pt-4 pb-5">
-            <div class="container">
-                <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
-                    <div class="col-md-4 d-flex mb-2 mb-md-0">
-                        <img src="images/81logo-icon.png" alt="81 logo"><a class="navbar-brand d-flex align-items-center" href="index.html"> <span class="ml-2"><small></small></span> </a>
+        <div class="modal fade" id="inquireModal" tabindex="-1" role="dialog" aria-labelledby="inquireModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="inquireModalLabel">Start Your Project</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="col-md-4 d-flex topper mb-md-0 mb-2 align-items-center">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span class="fa fa-map"></span>
-                        </div>
-                        <div class="pr-md-4 pl-md-3 pl-3 text">
-                            <p class="con"><span>Call </span> <span> +356 7981 8181</span></p>
-                            <p class="con"></p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 d-flex topper mb-md-0 align-items-center">
-                        <div class="icon d-flex justify-content-center align-items-center">
-                            <span class="fa fa-paper-plane"></span>
-                        </div>
-                        <div class="text pl-3 pl-md-3">
-                            <p class="hr"><span>Our Location</span></p>
-                            <p class="con">Triq Anton Inglott, San Gwann SGN1141</p>
-                            <p class="con">MALTA</p>
-                        </div>
+                    <div class="modal-body">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="inquireForm">
+                            <input type="hidden" name="access_key" value="c80c0e0c-0b46-4954-98de-dcc86c3b4aa4">
+                            <input type="hidden" name="redirect" value="https://www.81.mt/#successModal" /> 
+                            
+                            <div class="form-group">
+                                <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="phone" class="form-control" placeholder="Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="service" class="form-control" required>
+                                    <option value="">Select Your Services</option>
+                                    <option value="Project Management">Project Management</option>
+                                    <option value="Architecture">Architecture</option>
+                                    <option value="Consultancy">Consultancy</option>
+                                    <option value="Construction">Construction</option>
+                                    <option value="Interior & Exterior Design">Interior & Exterior Design</option>
+                                    <option value="Retrofitting">Retrofitting</option>
+                                    <option value="Turnkey & Other Services">Turnkey and other Services</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" cols="30" rows="4" class="form-control" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Start Your Project" class="btn btn-primary btn-block">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
         
+        <div class="pt-4 pb-5">
+            <div class="container">
+                <div class="row d-flex align-items-center px-3 px-md-0">
+                    <div class="col-md-4 d-flex mb-2 mb-md-0">
+                        <img src="images/81logo-icon.png">
+                        <a class="navbar-brand d-flex align-items-center" href="index.html"></a>
+                    </div>
+                    <div class="col-md-4 d-flex topper mb-md-0 mb-2 align-items-center">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span class="fa fa-phone"></span>
+                        </div>
+                        <div class="pr-md-4 pl-md-3 pl-3 text">
+                            <p class="con"><span>Call&nbsp;</span> <span>+356 7981 8181</span></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex topper mb-md-0 align-items-center">
+                        <div class="icon d-flex justify-content-center align-items-center">
+                            <span class="fa fa-map-marker"></span>
+                        </div>
+                        <div class="text pl-3 pl-md-3">
+                            <p class="hr"><span>Our Location</span></p>
+                            <p class="con">Triq Anton Inglott, San Gwann SGN1141, Malta</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container d-flex align-items-center">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span> Menu
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav">
+                    <span class="fa fa-bars"></span> Menu
                 </button>
                 <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a href="index.html" class="nav-link">Home</a>
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="about.html" class="nav-link">About</a>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="services.html" class="nav-link">Services</a>
+                        <li class="nav-item active"><a href="services.html" class="nav-link">Services</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="project.html" class="nav-link">Projects</a>
+                        <li class="nav-item"><a href="project.html" class="nav-link">Projects</a>
                         </li>
-                        <li class="nav-item active">
-                            <a href="contact.html" class="nav-link">Contact</a>
+                        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <section class="hero-wrap hero-wrap-2" style="background-image: url('images/contact-us-C.jpg');" data-stellar-background-ratio="0.5">
+        <section class="hero-wrap hero-wrap-2" style="background-image: url('images/services-bg.jpg');">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text align-items-end justify-content-start">
-                    <div class="col-md-9 ftco-animate pb-5">
-                        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Contact us <i class="fa fa-chevron-right"></i></span></p>
-                        <h1 class="mb-3 bread">Contact us</h1>
+                    <div class="col-md-9 pb-5">
+                        <h1 class="mb-3 bread">Our Services</h1>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+        <section class="ftco-section bg-half-light">
             <div class="container">
-                <div class="row justify-content-center mb-5 pb-3">
-                    <div class="col-md-7 heading-section text-center ftco-animate"><span class="subheading">Contact us</span>
-                        <h2 class="mb-4">Message us for more details</h2>
-                    </div>
+                <div class="row justify-content-center mb-5 pb-2 text-center">
+                    <h2>Professional Project Management and Real Estate Services</h2>
+                    <p>Delivering trusted real estate expertise since 1993, with professional service at the highest standard.</p>
                 </div>
-                <div class="row block-9">
-                    <div class="col-md-8">
-                        <form action="https://formsubmit.co/info@81.mt" method="POST" class="p-4 p-md-5 contact-form">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_template" value="table">
-                            <input type="hidden" name="_subject" value="New Contact from 81.mt">
-                            <input type="hidden" name="_next" value="https://www.81.mt/#successModal"> 
-                            
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="email" name="email" class="form-control" placeholder="Your Email" required> 
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" name="subject" class="form-control" placeholder="Subject">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-md-4 d-flex pl-md-5">
-                        <div class="row">
-                            <div class="dbox w-100 d-flex ftco-animate">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-map-marker"></span>
-                                </div>
-                                <div class="text">
-                                    <p><span>Address:</span>Triq Anton Inglott, San Gwann SGN1141</p>
-                                    <p>MALTA</p>
-                                </div>
-                            </div>
-                            <div class="dbox w-100 d-flex ftco-animate">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-phone"></span>
-                                </div>
-                                <div class="text">
-                                    <p><span>Phone:</span> <a href="tel://35679818181">+356 7981 8181</a></p>
-                                </div>
-                            </div>
-                            <div class="dbox w-100 d-flex ftco-animate">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-paper-plane"></span>
-                                </div>
-                                <div class="text">
-                                    <p><span>Email:</span> <a href="mailto:info@81.mt">info@81.mt</a></p>
-                                </div>
-                            </div>
-                            <div class="dbox w-100 d-flex ftco-animate">
-                                <div class="icon d-flex align-items-center justify-content-center">
-                                    <span class="fa fa-globe"></span>
-                                </div>
-                                <div class="text">
-                                    <p><span>Website</span> <a href="#">www.81.mt</a></p>
-                                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="services-wrap">
+                            <div class="img" style="background-image: url(images/services-1.jpg);"></div>
+                            <div class="text">
+                                <h2>Project Management</h2>
+                                <p>Complete coordination from planning to final handover. Delivered with precision. Built on trust.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 mt-4">
-                        <div style="width:100%; height:420px; border-radius:8px; overflow:hidden;">
-                            <iframe class="map-embed" 
-                                src="http://googleusercontent.com/maps.google.com/d/embed?q=81.mt@35.911111,14.473389&z=17" 
-                                allowfullscreen 
-                                loading="lazy">
-                            </iframe>
+                    <div class="col-md-4">
+                        <div class="services-wrap">
+                            <div class="img" style="background-image: url(images/services-2.jpg);"></div>
+                            <div class="text">
+                                <h2>Property Development</h2>
+                                <p>Structured residential and commercial development with cost control and professional execution.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="services-wrap">
+                            <div class="img" style="background-image: url(images/services-3.jpg);"></div>
+                            <div class="text">
+                                <h2>Construction & Turnkey</h2>
+                                <p>End-to-end construction solutions delivered with full accountability and premium workmanship.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="services-wrap">
+                            <div class="img" style="background-image: url(images/services-4.jpg);"></div>
+                            <div class="text">
+                                <h2>Design & Finishing</h2>
+                                <p>Interior and exterior finishing that combines durability, function, and refined design.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="services-wrap">
+                            <div class="img" style="background-image: url(images/real-estate-consultancy-4.jpg);"></div>
+                            <div class="text">
+                                <h2>Real Estate Consultancy</h2>
+                                <p>Strategic advice for property investment, development potential, and market positioning.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="services-wrap">
+                            <div class="img" style="background-image: url(images/sales-letting.jpg);"></div>
+                            <div class="text">
+                                <h2>Sales & Letting</h2>
+                                <p>Professional sales and leasing services supported by valuation, marketing, and negotiation.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <footer class="ftco-footer">
-            <div class="container mb-5 pb-4">
-                <div class="row">
-                    <div class="col-lg col-md-6"></div>
-                </div>
-            </div>
-            <div class="container-fluid bg-primary">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6 aside-stretch py-3">
-                            <p>© Copyright <script>document.write(new Date().getFullYear());</script> | 81 Energy Efficient Projects | All rights reserved.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section class="ftco-section bg-primary text-center text-white">
+            <h2>Your Project. Our Expertise.</h2>
+            <p>Request your quote and let’s turn your vision into reality.</p>
+            <a href="#" class="btn btn-light mt-3" data-toggle="modal" data-target="#inquireModal">Start Your Project</a>
+        </section>
+        <footer class="ftco-footer text-center py-4">
+            <p>© Copyright <script>document.write(new Date().getFullYear());</script> | 81 Energy Efficient Projects | All rights reserved.</p>
         </footer>
-        
         <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery-migrate-3.0.1.min.js"></script>
         <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.easing.1.3.js"></script>
         <script src="js/jquery.waypoints.min.js"></script>
         <script src="js/jquery.stellar.min.js"></script>
@@ -255,10 +256,10 @@
         <script src="js/bootstrap-datepicker.js"></script>
         <script src="js/jquery.timepicker.min.js"></script>
         <script src="js/scrollax.min.js"></script>
-        <script src="js/main.js"></script>
-        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+        <script src="js/google-map.js"></script>
         <script>
-        // --- WHATSAPP INQUIRY FUNCTION ---
+        // --- 1. WHATSAPP INQUIRY FUNCTION ---
         function openWhatsAppInquiry(event) {
             event.preventDefault(); // Stop the default anchor link action
 
@@ -266,7 +267,7 @@
             const WHATSAPP_NUMBER = "35679818181";
 
             // Pre-filled message text
-            var messageText = "Hello 81 Energy Efficient Projects, I found you on your Contact page and would like to inquire about your services. Please contact me.";
+            var messageText = "Hello 81 Energy Efficient Projects, I found you on your Services page and would like to inquire about your services. Please contact me.";
 
             // Construct the final URL
             var whatsappURL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(messageText)}`;
@@ -275,5 +276,6 @@
             window.open(whatsappURL, '_blank');
         }
         </script>
+        <script src="js/main.js"></script>
     </body>
 </html>
