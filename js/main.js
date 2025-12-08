@@ -3,13 +3,13 @@
 	"use strict";
 
 	$(window).stellar({
-    responsive: true,
-    parallaxBackgrounds: true,
-    parallaxElements: true,
-    horizontalScrolling: false,
-    hideDistantElements: false,
-    scrollProperty: 'scroll'
-  });
+    responsive: true,
+    parallaxBackgrounds: true,
+    parallaxElements: true,
+    horizontalScrolling: false,
+    hideDistantElements: false,
+    scrollProperty: 'scroll'
+  });
 
 
 	var fullHeight = function() {
@@ -24,7 +24,7 @@
 
 	// loader
 	var loader = function() {
-		setTimeout(function() { 
+		setTimeout(function() { 
 			if($('#ftco-loader').length > 0) {
 				$('#ftco-loader').removeClass('show');
 			}
@@ -33,7 +33,7 @@
 	loader();
 
 	// Scrollax
-  $.Scrollax();
+  $.Scrollax();
 	
 
 	var carousel = function() {
@@ -85,7 +85,7 @@
 
 
 	$('#dropdown04').on('show.bs.dropdown', function () {
-	  console.log('show');
+	  console.log('show');
 	});
 
 	// scroll
@@ -100,12 +100,12 @@
 				if ( !navbar.hasClass('scrolled') ) {
 					navbar.addClass('scrolled');	
 				}
-			} 
+			} 
 			if (st < 150) {
 				if ( navbar.hasClass('scrolled') ) {
 					navbar.removeClass('scrolled sleep');
 				}
-			} 
+			} 
 			if ( st > 350 ) {
 				if ( !navbar.hasClass('awake') ) {
 					navbar.addClass('awake');	
@@ -143,10 +143,10 @@
 						num = $this.data('number');
 						// console.log(num);
 					$this.animateNumber(
-					  {
-					    number: num,
-					    numberStep: comma_separator_number_step
-					  }, 7000
+					  {
+					    number: num,
+					    numberStep: comma_separator_number_step
+					  }, 7000
 					);
 				});
 				
@@ -182,7 +182,7 @@
 								el.addClass('fadeInUp ftco-animated');
 							}
 							el.removeClass('item-animate');
-						},  k * 50, 'easeInOutExpo' );
+						},  k * 50, 'easeInOutExpo' );
 					});
 					
 				}, 100);
@@ -195,74 +195,43 @@
 
 	// magnific popup
 	$('.image-popup').magnificPopup({
-    type: 'image',
-    closeOnContentClick: true,
-    closeBtnInside: false,
-    fixedContentPos: true,
-    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
-     gallery: {
-      enabled: true,
-      navigateByImgClick: true,
-      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
-    },
-    image: {
-      verticalFit: true
-    },
-    zoom: {
-      enabled: true,
-      duration: 300 // don't foget to change the duration also in CSS
-    }
-  });
+    type: 'image',
+    closeOnContentClick: true,
+    closeBtnInside: false,
+    fixedContentPos: true,
+    mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+     gallery: {
+      enabled: true,
+      navigateByImgClick: true,
+      preload: [0,1] // Will preload 0 - before current, and 1 after the current image
+    },
+    image: {
+      verticalFit: true
+    },
+    zoom: {
+      enabled: true,
+      duration: 300 // don't foget to change the duration also in CSS
+    }
+  });
 
-  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-    disableOn: 700,
-    type: 'iframe',
-    mainClass: 'mfp-fade',
-    removalDelay: 160,
-    preloader: false,
+  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+    disableOn: 700,
+    type: 'iframe',
+    mainClass: 'mfp-fade',
+    removalDelay: 160,
+    preloader: false,
 
-    fixedContentPos: false
-  });
+    fixedContentPos: false
+  });
 
-  $('.appointment_date').datepicker({
-	  'format': 'm/d/yyyy',
-	  'autoclose': true
+  $('.appointment_date').datepicker({
+	  'format': 'm/d/yyyy',
+	  'autoclose': true
 	});
 	$('.appointment_time').timepicker();
 
 
 })(jQuery);
 
-function handleNetlifySubmit(event, formModalId) {
-    event.preventDefault(); // Stop the default HTML redirect
-
-    const form = document.getElementById(event.target.id);
-    const formData = new FormData(form);
-
-    // Use Netlify's endpoint to submit the form data
-    fetch("/", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => {
-        // Check for success status (200-299 range)
-        if (response.ok) {
-            // 1. Submission was successful. Hide the form modal.
-            $('#' + formModalId).modal('hide'); 
-            
-            // 2. Show the new success modal.
-            $('#successModal').modal('show');
-            
-            // 3. Clear the form data for next use
-            form.reset(); 
-        } else {
-            // Failure: Display the generic error message
-            alert("Error: Submission failed. Please try again or call us.");
-        }
-    })
-    .catch(error => {
-        // Handle network errors
-        console.error('Submission Error:', error);
-        alert("Error: Network error occurred. Please try again.");
-    });
-}
+// THE OLD handleNetlifySubmit FUNCTION HAS BEEN REMOVED. 
+// The form now submits directly to the Web3Forms action URL defined in index.html.
