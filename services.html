@@ -8,9 +8,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
+        <link rel="stylesheet" href="css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="css/jquery.timepicker.css">
+        <link rel="stylesheet" href="css/flaticon.css">
     </head>
     <body>
-        <!-- TOP BAR -->
         <div class="py-1 top">
             <div class="container">
                 <div class="row">
@@ -23,12 +29,79 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                        <p class="mb-0 register-link"> <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#inquireModal">Inquire Now</a> </p>
+                        <p class="mb-0 register-link"> <a href="#" class="btn btn-primary" onclick="openWhatsAppInquiry(event)">Inquire Now</a> </p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- LOGO + CONTACT -->
+        
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Submission Successful!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <h1 style="color: #007bff;"><span class="fa fa-check-circle"></span></h1>
+                        <p class="lead">Thank you! Your request has been successfully submitted.</p>
+                        <p>We will contact you shortly.</p>
+                        <button type="button" class="btn btn-primary mt-3" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="inquireModal" tabindex="-1" role="dialog" aria-labelledby="inquireModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="inquireModalLabel">Start Your Project</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="inquireForm">
+                            <input type="hidden" name="access_key" value="c80c0e0c-0b46-4954-98de-dcc86c3b4aa4">
+                            <input type="hidden" name="redirect" value="https://www.81.mt/#successModal" /> 
+                            
+                            <div class="form-group">
+                                <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="last_name" class="form-control" placeholder="Last Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="phone" class="form-control" placeholder="Phone" required>
+                            </div>
+                            <div class="form-group">
+                                <select name="service" class="form-control" required>
+                                    <option value="">Select Your Services</option>
+                                    <option value="Project Management">Project Management</option>
+                                    <option value="Architecture">Architecture</option>
+                                    <option value="Consultancy">Consultancy</option>
+                                    <option value="Construction">Construction</option>
+                                    <option value="Interior & Exterior Design">Interior & Exterior Design</option>
+                                    <option value="Retrofitting">Retrofitting</option>
+                                    <option value="Turnkey & Other Services">Turnkey and other Services</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" cols="30" rows="4" class="form-control" placeholder="Message" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Start Your Project" class="btn btn-primary btn-block">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="pt-4 pb-5">
             <div class="container">
                 <div class="row d-flex align-items-center px-3 px-md-0">
@@ -56,7 +129,6 @@
                 </div>
             </div>
         </div>
-        <!-- NAV -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container d-flex align-items-center">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav">
@@ -78,7 +150,6 @@
                 </div>
             </div>
         </nav>
-        <!-- HERO -->
         <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');">
             <div class="overlay"></div>
             <div class="container">
@@ -89,7 +160,6 @@
                 </div>
             </div>
         </section>
-        <!-- SERVICES SECTION -->
         <section class="ftco-section bg-half-light">
             <div class="container">
                 <div class="row justify-content-center mb-5 pb-2 text-center">
@@ -154,7 +224,6 @@
                 </div>
             </div>
         </section>
-        <!-- CTA -->
         <section class="ftco-section bg-primary text-center text-white">
             <h2>Your Project. Our Expertise.</h2>
             <p>Request your quote and let’s turn your vision into reality.</p>
@@ -165,5 +234,37 @@
         </footer>
         <script src="js/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-migrate-3.0.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/jquery.easing.1.3.js"></script>
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/jquery.stellar.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/jquery.animateNumber.min.js"></script>
+        <script src="js/bootstrap-datepicker.js"></script>
+        <script src="js/jquery.timepicker.min.js"></script>
+        <script src="js/scrollax.min.js"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+        <script src="js/google-map.js"></script>
+        <script>
+        // --- 1. WHATSAPP INQUIRY FUNCTION ---
+        function openWhatsAppInquiry(event) {
+            event.preventDefault(); // Stop the default anchor link action
+
+            // Your WhatsApp Number (with country code)
+            const WHATSAPP_NUMBER = "35679818181";
+
+            // Pre-filled message text
+            var messageText = "Hello 81 Energy Efficient Projects, I found you on your Services page and would like to inquire about your services. Please contact me.";
+
+            // Construct the final URL
+            var whatsappURL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(messageText)}`;
+
+            // Open the WhatsApp app/web in a new tab
+            window.open(whatsappURL, '_blank');
+        }
+        </script>
+        <script src="js/main.js"></script>
     </body>
 </html>
