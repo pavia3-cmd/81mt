@@ -34,6 +34,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -44,13 +45,15 @@
                     </div>
                     <div class="modal-body text-center">
                         <h1 style="color: #007bff;"><span class="fa fa-check-circle"></span></h1>
-                        <p class="lead">Thank you! Your request has been successfully submitted.</p>
-                        <p>We will contact you shortly.</p>
+                        <p class="lead">Message Sent Successfully! 👋</p>
+                        <p class="lead">Thank you for reaching out and entrusting us with your project vision.</p>
+                        <p>We will review your inquiry and get back to you within **48 hours**.</p>
                         <button type="button" class="btn btn-primary mt-3" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
         </div>
+        
         <div class="modal fade" id="inquireModal" tabindex="-1" role="dialog" aria-labelledby="inquireModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -62,6 +65,7 @@
                 </div>
             </div>
         </div>
+        
         <div class="pt-4 pb-5">
             <div class="container">
                 <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
@@ -225,6 +229,7 @@
                 </div>
             </div>
         </footer>
+        
         <div class="modal fade" id="quoteModal" tabindex="-1" role="dialog" aria-labelledby="quoteModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -237,6 +242,7 @@
                         <form action="https://api.web3forms.com/submit" method="POST" id="quoteForm">
                             <input type="hidden" name="access_key" value="c80c0e0c-0b46-4954-98de-dcc86c3b4aa4">
                             <input type="hidden" name="redirect" value="https://www.81.mt/#successModal" /> 
+                            
                             <div class="form-group">
                                 <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
                             </div>
@@ -272,6 +278,7 @@
                 </div>
             </div>
         </div>
+        
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery-migrate-3.0.1.min.js"></script>
         <script src="js/popper.min.js"></script>
@@ -287,9 +294,9 @@
         <script src="js/scrollax.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
         <script src="js/google-map.js"></script>
+        
         <script>
             // --- 1. WHATSAPP INQUIRY FUNCTION ---
-            // This function remains the same, enabling the 'Inquire Now' button to open WhatsApp.
             function openWhatsAppInquiry(event) {
                 event.preventDefault(); // Stop the default anchor link action
 
@@ -305,10 +312,6 @@
                 // Open the WhatsApp app/web in a new tab
                 window.open(whatsappURL, '_blank');
             }
-
-            // --- 2. REQUEST A QUOTE SUBMISSION ---
-            // The handleQuoteSubmit function is now DELETED because Web3Forms handles the submission directly.
-            // The form will post data to Web3Forms and then automatically redirect to the success modal.
         </script>
         <script src="js/main.js"></script>
     </body>
