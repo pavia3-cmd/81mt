@@ -249,8 +249,22 @@
         <script src="js/jquery.timepicker.min.js"></script>
         <script src="js/scrollax.min.js"></script>
         <script src="js/main.js"></script>
-        
+
         <script>
+        // *** FINAL FIX: THIS JAVASCRIPT SNIPPET FORCES THE MODAL TO OPEN ON REDIRECTION ***
+        $(document).ready(function() {
+            if (window.location.hash == '#successModal') {
+                $('#successModal').modal('show');
+                
+                // Optional: Clear the hash from the URL after displaying, so it doesn't pop up again on refresh
+                if (history.replaceState) {
+                    history.replaceState(null, null, ' ');
+                } else {
+                    window.location.hash = '';
+                }
+            }
+        });
+
         // --- WHATSAPP INQUIRY FUNCTION ---
         function openWhatsAppInquiry(event) {
             event.preventDefault(); 
