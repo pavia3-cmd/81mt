@@ -29,52 +29,13 @@
                             <p class="mb-0 d-flex"> <a href="https://www.facebook.com/81res/" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a> <a href="https://x.com/ePropertyupdate" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a> <a href="https://www.instagram.com/81realestateservices/" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a> <a href="https://www.linkedin.com/company/81res" class="d-flex align-items-center justify-content-center"><span class="fa fa-linkedin"><i class="sr-only">LinkedIn</i></span></a> </p>
                         </div>
                     </div>
-                    <!-- Inquire Now Button (keeps original place) -->
                     <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                        <p class="mb-0 register-link"> <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#inquireModal">Inquire Now</a> </p>
+                        <p class="mb-0 register-link"> <a href="#" class="btn btn-primary" onclick="openWhatsAppInquiry(event)">Inquire Now</a> </p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Inquire Now Modal (modernized but small change only) -->
-        <div class="modal fade" id="inquireModal" tabindex="-1" role="dialog" aria-labelledby="inquireModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Inquire Now</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <!-- Modal form now posts to FormSubmit (sends to info@81.mt) -->
-                    <div class="modal-body">
-                        <form action="https://formspree.io/f/mbjvvlpn" method="POST" class="contact-form">
-                            <div class="row">
-                                <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6 form-group">
-                                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-                                </div>
-                                <div class="col-md-12 form-group">
-                                    <input type="text" name="subject" class="form-control" placeholder="Subject" required>
-                                </div>
-                                <div class="col-md-12 form-group">
-                                    <textarea name="message" class="form-control" rows="6" placeholder="Message" required></textarea>
-                                </div>
-                                <!-- Your receiving email -->
-                                <input type="hidden" name="_replyto" value="info@81.mt">
-                                <!-- Redirect after successful send -->
-                                <input type="hidden" name="_next" value="thank-you.html">
-                                <div class="col-md-12 text-center">
-                                    <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header block with logo and contact details (preserved exactly) -->
+        
         <div class="pt-4 pb-5">
             <div class="container">
                 <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
@@ -86,7 +47,7 @@
                             <span class="fa fa-map"></span>
                         </div>
                         <div class="pr-md-4 pl-md-3 pl-3 text">
-                            <p class="con"><span>Call&nbsp;</span> <span> +356 7981 8181</span></p>
+                            <p class="con"><span>Call </span> <span> +356 7981 8181</span></p>
                             <p class="con"></p>
                         </div>
                     </div>
@@ -103,7 +64,7 @@
                 </div>
             </div>
         </div>
-        <!-- Nav (unchanged) -->
+        
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container d-flex align-items-center">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span> Menu
@@ -129,7 +90,6 @@
                 </div>
             </div>
         </nav>
-        <!-- Hero -->
         <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
@@ -141,7 +101,6 @@
                 </div>
             </div>
         </section>
-        <!-- Contact Section (main page) -->
         <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
             <div class="container">
                 <div class="row justify-content-center mb-5 pb-3">
@@ -150,13 +109,12 @@
                     </div>
                 </div>
                 <div class="row block-9">
-                    <!-- Main contact form now posts to FormSubmit (info@81.mt) -->
                     <div class="col-md-8">
                         <form action="https://formsubmit.co/info@81.mt" method="POST" class="p-4 p-md-5 contact-form">
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_subject" value="New Contact from 81.mt">
-                            <div class="row">
+                            <input type="hidden" name="_next" value="https://www.81.mt/thank-you.html"> <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="name" class="form-control" placeholder="Your Name" required>
@@ -164,7 +122,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                                        <input type="email" name="email" class="form-control" placeholder="Your Email" required> 
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -185,7 +143,6 @@
                             </div>
                         </form>
                     </div>
-                    <!-- Sidebar info preserved unchanged -->
                     <div class="col-md-4 d-flex pl-md-5">
                         <div class="row">
                             <div class="dbox w-100 d-flex ftco-animate">
@@ -202,7 +159,7 @@
                                     <span class="fa fa-phone"></span>
                                 </div>
                                 <div class="text">
-                                    <p><span>Phone:</span> <a href="tel://1234567920">+356 7981 8181</a></p>
+                                    <p><span>Phone:</span> <a href="tel://35679818181">+356 7981 8181</a></p>
                                 </div>
                             </div>
                             <div class="dbox w-100 d-flex ftco-animate">
@@ -223,16 +180,18 @@
                             </div>
                         </div>
                     </div>
-                    <!-- MAP: replaced with iframe embed to avoid API/script issues -->
                     <div class="col-md-12 mt-4">
                         <div style="width:100%; height:420px; border-radius:8px; overflow:hidden;">
-                            <iframe class="map-embed" src="https://www.google.com/maps?q=81%20Energy%20Efficient%20Projects%20Triq%20Anton%20Inglott%20San%20Gwann%20Malta&z=16&output=embed" allowfullscreen loading="lazy"></iframe>
+                            <iframe class="map-embed" 
+                                src="https://maps.google.com/maps?q=35%C2%B054'40.0%22N%2014%C2%B028'24.2%22E&z=15&output=embed&hl=en&t=m&iwloc=A&center=35.911111,14.473389&marker=35.911111,14.473389&q=81.mt" 
+                                allowfullscreen 
+                                loading="lazy">
+                            </iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Footer (preserved exactly with content) -->
         <footer class="ftco-footer">
             <div class="container mb-5 pb-4">
                 <div class="row">
@@ -249,9 +208,7 @@
                 </div>
             </div>
         </footer>
-        <!-- Removed JS Google Maps API usage to avoid double-loading/API errors.
-         Map is embedded using iframe above which is reliable. -->
-        <!-- Original scripts preserved (keep these intact) -->
+        
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery-migrate-3.0.1.min.js"></script>
         <script src="js/popper.min.js"></script>
@@ -266,5 +223,24 @@
         <script src="js/jquery.timepicker.min.js"></script>
         <script src="js/scrollax.min.js"></script>
         <script src="js/main.js"></script>
+        
+        <script>
+        // --- WHATSAPP INQUIRY FUNCTION ---
+        function openWhatsAppInquiry(event) {
+            event.preventDefault(); // Stop the default anchor link action
+
+            // Your WhatsApp Number (with country code)
+            const WHATSAPP_NUMBER = "35679818181";
+
+            // Pre-filled message text
+            var messageText = "Hello 81 Energy Efficient Projects, I found you on your Contact page and would like to inquire about your services. Please contact me.";
+
+            // Construct the final URL
+            var whatsappURL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(messageText)}`;
+
+            // Open the WhatsApp app/web in a new tab
+            window.open(whatsappURL, '_blank');
+        }
+        </script>
     </body>
 </html>
