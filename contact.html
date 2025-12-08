@@ -17,11 +17,9 @@
         <link rel="stylesheet" href="css/style.css">
         
         <style>
-            /* Keeping minimal custom styles */
             .contact-form .form-control { border-radius: 6px; } 
             .modal .form-control { border-radius: 6px; } 
             iframe.map-embed { border-radius: 8px; border: 0; width: 100%; height: 400px; }
-            /* Removed background-size: contain fix to revert to original style */
         </style>
         
     </head>
@@ -44,6 +42,25 @@
             </div>
         </div>
         
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Submission Successful!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <h1 style="color: #007bff;"><span class="fa fa-check-circle"></span></h1>
+                        <p class="lead">Message Sent Successfully! 👋</p>
+                        <p class="lead">Thank you for reaching out and entrusting us with your project vision.</p>
+                        <p>We will review your inquiry and get back to you within **48 hours**.</p>
+                        <button type="button" class="btn btn-primary mt-3" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="pt-4 pb-5">
             <div class="container">
                 <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
@@ -98,7 +115,7 @@
                 </div>
             </div>
         </nav>
-        <section class="hero-wrap hero-wrap-2" style="background-image: url('images/contact-us-C.jpg');" data-stellar-background-ratio="0.5">
+        <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
             <div class="overlay"></div>
             <div class="container">
                 <div class="row no-gutters slider-text align-items-end justify-content-start">
