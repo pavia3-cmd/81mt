@@ -29,56 +29,12 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                        <p class="mb-0 register-link"> <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#inquireModal">Inquire Now</a> </p>
+                        <p class="mb-0 register-link"> <a href="#" class="btn btn-primary" onclick="openWhatsAppInquiry(event)">Inquire Now</a> </p>
                     </div>
-                    <div class="modal fade" id="inquireModal" tabindex="-1" role="dialog" aria-labelledby="inquireModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="inquireModalLabel">Inquire Now</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form id="inquireForm">
-                                        <div class="form-group">
-                                            <label for="nameInput">Your Name</label>
-                                            <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="emailInput">Your Email</label>
-                                            <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="messageInput">Message (optional)</label>
-                                            <textarea class="form-control" id="messageInput" placeholder="Your message" rows="3"></textarea>
-                                        </div>
-                                        <button type="button" class="btn btn-primary btn-block" onclick="sendWhatsApp()">Send via WhatsApp</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        function sendWhatsApp() {
-                            let name = document.getElementById('nameInput').value.trim();
-                            let email = document.getElementById('emailInput').value.trim();
-                            let message = document.getElementById('messageInput').value.trim();
-
-                            if(!name || !email) { alert("Please enter your name and email."); return; }
-
-                            let text = `Hello! My name is ${name}. I found you on your website www.81.mt. My email is ${email}. ${message ? "Message: " + message + ". " : ""}We shall respond within 24 hours.`;
-                            let encodedText = encodeURIComponent(text);
-                            let waNumber = "35679818181";
-
-                            window.open(`https://wa.me/${waNumber}?text=${encodedText}`, '_blank');
-                            $('#inquireModal').modal('hide');
-                            document.getElementById('inquireForm').reset();
-                        }
-                    </script>
                 </div>
             </div>
         </div>
+        
         <div class="pt-4 pb-5">
             <div class="container">
                 <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
@@ -104,6 +60,7 @@
                 </div>
             </div>
         </div>
+        
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
             <div class="container d-flex align-items-center">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span> Menu
@@ -149,7 +106,6 @@
                     </div>
                 </div>
                 <div class="row">
-                    <!-- Project items remain the same -->
                     <div class="col-md-4">
                         <div class="project">
                             <a href="images/project-1.jpg" class="img image-popup d-flex align-items-center" style="background-image: url(images/project-1.jpg);"> <div class="icon d-flex align-items-center justify-content-center mb-5"><span class="fa fa-plus"></span>
@@ -197,13 +153,13 @@
                 </div>
             </div>
         </footer>
-        <!-- Modals, loader, scripts remain the same -->
         <div id="ftco-loader" class="show fullscreen">
             <svg class="circular" width="48px" height="48px">
                 <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/>
                 <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/>
             </svg>
         </div>
+        
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery-migrate-3.0.1.min.js"></script>
         <script src="js/popper.min.js"></script>
@@ -219,6 +175,24 @@
         <script src="js/scrollax.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
         <script src="js/google-map.js"></script>
+        <script>
+        // --- WHATSAPP INQUIRY FUNCTION ---
+        function openWhatsAppInquiry(event) {
+            event.preventDefault(); // Stop the default anchor link action
+
+            // Your WhatsApp Number (with country code)
+            const WHATSAPP_NUMBER = "35679818181";
+
+            // Pre-filled message text
+            var messageText = "Hello 81 Energy Efficient Projects, I found you on your Projects page and would like to inquire about your services. Please contact me.";
+
+            // Construct the final URL
+            var whatsappURL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(messageText)}`;
+
+            // Open the WhatsApp app/web in a new tab
+            window.open(whatsappURL, '_blank');
+        }
+        </script>
         <script src="js/main.js"></script>
     </body>
 </html>
