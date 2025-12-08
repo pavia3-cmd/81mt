@@ -17,12 +17,7 @@
         <link rel="stylesheet" href="css/flaticon.css">
         
         <style>
-            .hero-wrap-2 {
-                /* Forces the entire image to fit within the section without cropping */
-                background-size: contain !important; 
-                background-position: center !important;
-                background-repeat: no-repeat !important; 
-            }
+            /* Removed background-size: contain fix to revert to original style */
         </style>
 
     </head>
@@ -261,18 +256,12 @@
         <script>
         // --- 1. WHATSAPP INQUIRY FUNCTION ---
         function openWhatsAppInquiry(event) {
-            event.preventDefault(); // Stop the default anchor link action
+            event.preventDefault(); 
 
-            // Your WhatsApp Number (with country code)
             const WHATSAPP_NUMBER = "35679818181";
-
-            // Pre-filled message text
             var messageText = "Hello 81 Energy Efficient Projects, I found you on your Services page and would like to inquire about your services. Please contact me.";
-
-            // Construct the final URL
             var whatsappURL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(messageText)}`;
 
-            // Open the WhatsApp app/web in a new tab
             window.open(whatsappURL, '_blank');
         }
         </script>
