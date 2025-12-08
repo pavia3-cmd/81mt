@@ -47,7 +47,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="successModalLabel">Submission Successful!</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
                         </button>
                     </div>
                     <div class="modal-body text-center">
@@ -135,11 +135,10 @@
                 </div>
                 <div class="row block-9">
                     <div class="col-md-8">
-                        <form action="https://formsubmit.co/info@81.mt" method="POST" class="p-4 p-md-5 contact-form">
-                            <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_template" value="table">
+                        <form action="https://api.web3forms.com/submit" method="POST" class="p-4 p-md-5 contact-form">
+                            <input type="hidden" name="access_key" value="c80c0e0c-0b46-4954-98de-dcc86c3b4aa4">
+                            <input type="hidden" name="redirect" value="https://www.81.mt/#successModal" /> 
                             <input type="hidden" name="_subject" value="New Contact from 81.mt">
-                            <input type="hidden" name="_next" value="https://www.81.mt/#successModal"> 
                             
                             <div class="row">
                                 <div class="col-md-6">
@@ -210,7 +209,7 @@
                     <div class="col-md-12 mt-4">
                         <div style="width:100%; height:420px; border-radius:8px; overflow:hidden;">
                             <iframe class="map-embed" 
-                                src="https://maps.google.com/maps?q=81.mt%20Triq%20Anton%20Inglott,%20San%20Gwann%20SGN1141&t=&z=16&ie=UTF8&iwloc=B&output=embed" 
+                                src="https://maps.google.com/maps?q=81.mt@35.911111,14.473389&z=17&output=embed" 
                                 allowfullscreen 
                                 loading="lazy">
                             </iframe>
