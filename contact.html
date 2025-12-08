@@ -15,7 +15,19 @@
         <link rel="stylesheet" href="css/jquery.timepicker.css">
         <link rel="stylesheet" href="css/flaticon.css">
         <link rel="stylesheet" href="css/style.css">
-        <style>/* Small modern touches kept minimal so original styling remains */.contact-form .form-control { border-radius: 6px; } .modal .form-control { border-radius: 6px; } iframe.map-embed { border-radius: 8px; border: 0; width: 100%; height: 400px; }</style>
+        
+        <style>
+            /* Fixes background image visibility: makes the entire image fit */
+            .hero-wrap-2 {
+                background-size: contain !important; 
+                background-position: center !important;
+                background-repeat: no-repeat !important; 
+            }
+            .contact-form .form-control { border-radius: 6px; } 
+            .modal .form-control { border-radius: 6px; } 
+            iframe.map-embed { border-radius: 8px; border: 0; width: 100%; height: 400px; }
+        </style>
+        
     </head>
     <body>
         <div class="py-1 top">
@@ -54,6 +66,7 @@
                 </div>
             </div>
         </div>
+
         <div class="pt-4 pb-5">
             <div class="container">
                 <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
@@ -246,7 +259,6 @@
         
         <script>
         // --- WHATSAPP INQUIRY FUNCTION ---
-        // This is necessary to handle the "Inquire Now" button
         function openWhatsAppInquiry(event) {
             event.preventDefault(); // Stop the default anchor link action
 
