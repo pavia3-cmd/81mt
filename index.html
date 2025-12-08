@@ -29,7 +29,7 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-7 d-flex topper align-items-center text-lg-right justify-content-end">
-                        <p class="mb-0 register-link"> <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#inquireModal">Inquire Now</a> </p>
+                        <p class="mb-0 register-link"> <a href="#" class="btn btn-primary" onclick="openWhatsAppInquiry(event)">Inquire Now</a> </p>
                     </div>
                 </div>
             </div>
@@ -59,26 +59,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <form name="inquire" method="POST" data-netlify="true" id="inquireForm" onsubmit="handleNetlifySubmit(event, 'inquireModal')">
-                            <input type="hidden" name="form-name" value="inquire">
-                            <input type="hidden" name="netlify" value="true"/>
-                            <div class="form-group">
-                                <label for="nameInput">Your Name</label>
-                                <input type="text" class="form-control" name="name" id="nameInput" placeholder="Enter your name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="emailInput">Your Email</label>
-                                <input type="email" class="form-control" name="email" id="emailInput" placeholder="Enter your email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="messageInput">Message (optional)</label>
-                                <textarea class="form-control" name="message" id="messageInput" placeholder="Your message" rows="3"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
-                        </form>
                     </div>
-                </div>
             </div>
         </div>
         <div class="pt-4 pb-5">
@@ -160,7 +141,7 @@
                                 <h3 class="heading mb-3">Quality Construction</h3>
                                 <p>High-quality craftsmanship in every project we deliver. Built using trusted materials and expert techniques. Designed for strength, value, and longevity.</p>
                             </div>
-                        </div>                         
+                        </div>                          
                     </div>
                     <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                         <div class="media block-6 services services-2 d-flex">
@@ -171,7 +152,7 @@
                                 <h3 class="heading mb-3">Professional Liability</h3>
                                 <p>Fully insured and professionally accountable construction services. We manage risks so you don&rsquo;t have to. Peace of mind comes standard.</p>
                             </div>
-                        </div>                         
+                        </div>                          
                     </div>
                     <div class="col-lg-4 d-flex align-self-stretch ftco-animate">
                         <div class="media block-6 services d-flex">
@@ -182,7 +163,7 @@
                                 <h3 class="heading mb-3">Dedicated To Our Clients</h3>
                                 <p>We build strong relationships, not just buildings. Your vision guides every decision we make. Reliable support from start to finish.</p>
                             </div>
-                        </div>                         
+                        </div>                          
                     </div>
                 </div>
             </div>
@@ -253,9 +234,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form name="quote" method="POST" data-netlify="true" id="quoteForm" onsubmit="handleNetlifySubmit(event, 'quoteModal')">
-                            <input type="hidden" name="form-name" value="quote">
-                            <input type="hidden" name="netlify" value="true"/>
+                        <form name="quote" method="POST" id="quoteForm" onsubmit="return handleQuoteSubmit(event)">
                             <div class="form-group">
                                 <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
                             </div>
@@ -306,6 +285,64 @@
         <script src="js/scrollax.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
         <script src="js/google-map.js"></script>
+        <script>
+            // --- 1. WHATSAPP INQUIRY FUNCTION ---
+            function openWhatsAppInquiry(event) {
+                event.preventDefault(); // Stop the default anchor link action
+
+                // Your WhatsApp Number (with country code)
+                const WHATSAPP_NUMBER = "35679818181";
+
+                // Pre-filled message text
+                var messageText = "Hello 81 Energy Efficient Projects, I would like to inquire about your services. Please contact me.";
+
+                // Construct the final URL
+                var whatsappURL = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(messageText)}`;
+
+                // Open the WhatsApp app/web in a new tab
+                window.open(whatsappURL, '_blank');
+            }
+
+            // --- 2. REQUEST A QUOTE (MAILTO) FUNCTION ---
+            function handleQuoteSubmit(event) {
+                event.preventDefault(); // Stop the form from submitting normally
+
+                var form = document.getElementById('quoteForm');
+                
+                // Gather data from form fields
+                var firstName = form.first_name.value;
+                var lastName = form.last_name.value;
+                var email = form.email.value;
+                var phone = form.phone.value;
+                var service = form.service.value;
+                var message = form.message.value;
+
+                // Format the email subject and body
+                var subject = `New Quote Request for ${service}`;
+                var body = `A new quote request has been submitted:%0A%0A` +
+                           `Name: ${firstName} ${lastName}%0A` +
+                           `Email: ${email}%0A` +
+                           `Phone: ${phone}%0A` +
+                           `Service: ${service}%0A%0A` +
+                           `Message: ${message}%0A`;
+
+                // Construct the mailto link
+                var mailtoLink = `mailto:info@81.mt?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                
+                // Open the client's email program
+                window.location.href = mailtoLink;
+
+                // Optionally, hide the modal and show a success message after the link is opened
+                // NOTE: The client still needs to click 'Send' in their email program.
+                $('#quoteModal').modal('hide');
+                $('#successModal').modal('show'); 
+
+                return false;
+            }
+
+            // Placeholder function for old Netlify handler (removed from HTML)
+            function handleNetlifySubmit(event, modalId) { /* Function removed */ }
+        </script>
         <script src="js/main.js"></script>
     </body>
 </html>
