@@ -59,7 +59,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    </div>
+                </div>
             </div>
         </div>
         <div class="pt-4 pb-5">
@@ -234,7 +234,9 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form name="quote" method="POST" id="quoteForm" onsubmit="return handleQuoteSubmit(event)">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="quoteForm">
+                            <input type="hidden" name="access_key" value="c80c0e0c-0b46-4954-98de-dcc86c3b4aa4">
+                            <input type="hidden" name="redirect" value="https://www.81.mt/#successModal" /> 
                             <div class="form-group">
                                 <input type="text" name="first_name" class="form-control" placeholder="First Name" required>
                             </div>
@@ -263,7 +265,7 @@
                                 <textarea name="message" cols="30" rows="4" class="form-control" placeholder="Message" required></textarea>
                             </div>
                             <div class="form-group">
-                                <input type="submit" value="Submit" class="btn btn-primary btn-block">
+                                <input type="submit" value="Request A Quote" class="btn btn-primary btn-block">
                             </div>
                         </form>
                     </div>
@@ -287,6 +289,7 @@
         <script src="js/google-map.js"></script>
         <script>
             // --- 1. WHATSAPP INQUIRY FUNCTION ---
+            // This function remains the same, enabling the 'Inquire Now' button to open WhatsApp.
             function openWhatsAppInquiry(event) {
                 event.preventDefault(); // Stop the default anchor link action
 
@@ -303,45 +306,9 @@
                 window.open(whatsappURL, '_blank');
             }
 
-            // --- 2. REQUEST A QUOTE (MAILTO) FUNCTION ---
-            function handleQuoteSubmit(event) {
-                event.preventDefault(); // Stop the form from submitting normally
-
-                var form = document.getElementById('quoteForm');
-                
-                // Gather data from form fields
-                var firstName = form.first_name.value;
-                var lastName = form.last_name.value;
-                var email = form.email.value;
-                var phone = form.phone.value;
-                var service = form.service.value;
-                var message = form.message.value;
-
-                // Format the email subject and body
-                var subject = `New Quote Request for ${service}`;
-                var body = `A new quote request has been submitted:%0A%0A` +
-                           `Name: ${firstName} ${lastName}%0A` +
-                           `Email: ${email}%0A` +
-                           `Phone: ${phone}%0A` +
-                           `Service: ${service}%0A%0A` +
-                           `Message: ${message}%0A`;
-
-                // Construct the mailto link
-                var mailtoLink = `mailto:info@81.mt?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-                
-                // Open the client's email program
-                window.location.href = mailtoLink;
-
-                // Optionally, hide the modal and show a success message after the link is opened
-                // NOTE: The client still needs to click 'Send' in their email program.
-                $('#quoteModal').modal('hide');
-                $('#successModal').modal('show'); 
-
-                return false;
-            }
-
-            // Placeholder function for old Netlify handler (removed from HTML)
-            function handleNetlifySubmit(event, modalId) { /* Function removed */ }
+            // --- 2. REQUEST A QUOTE SUBMISSION ---
+            // The handleQuoteSubmit function is now DELETED because Web3Forms handles the submission directly.
+            // The form will post data to Web3Forms and then automatically redirect to the success modal.
         </script>
         <script src="js/main.js"></script>
     </body>
