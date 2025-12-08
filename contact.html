@@ -36,6 +36,24 @@
             </div>
         </div>
         
+        <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Submission Successful!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <h1 style="color: #007bff;"><span class="fa fa-check-circle"></span></h1>
+                        <p class="lead">Message Sent Successfully! 👋</p>
+                        <p class="lead">Thank you for reaching out and entrusting us with your project vision.</p>
+                        <p>We will review your inquiry and get back to you within **48 hours**.</p>
+                        <button type="button" class="btn btn-primary mt-3" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="pt-4 pb-5">
             <div class="container">
                 <div class="row d-flex align-items-start align-items-center px-3 px-md-0">
@@ -114,7 +132,9 @@
                             <input type="hidden" name="_captcha" value="false">
                             <input type="hidden" name="_template" value="table">
                             <input type="hidden" name="_subject" value="New Contact from 81.mt">
-                            <input type="hidden" name="_next" value="https://www.81.mt/thank-you.html"> <div class="row">
+                            <input type="hidden" name="_next" value="https://www.81.mt/#successModal"> 
+                            
+                            <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <input type="text" name="name" class="form-control" placeholder="Your Name" required>
@@ -182,7 +202,10 @@
                     </div>
                     <div class="col-md-12 mt-4">
                         <div style="width:100%; height:420px; border-radius:8px; overflow:hidden;">
-                            <iframe class="map-embed" src="https://maps.google.com/maps?q=35.911111,14.473389&amp;hl=en&amp;z=16&amp;output=embed&amp;t=m&amp;iwloc=A&amp;label=81.mt" allowfullscreen loading="lazy">
+                            <iframe class="map-embed" 
+                                src="http://googleusercontent.com/maps.google.com/d/embed?q=81.mt@35.911111,14.473389&z=17" 
+                                allowfullscreen 
+                                loading="lazy">
                             </iframe>
                         </div>
                     </div>
@@ -223,6 +246,7 @@
         
         <script>
         // --- WHATSAPP INQUIRY FUNCTION ---
+        // This is necessary to handle the "Inquire Now" button
         function openWhatsAppInquiry(event) {
             event.preventDefault(); // Stop the default anchor link action
 
